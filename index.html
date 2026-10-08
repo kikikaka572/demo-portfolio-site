@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jay Chae — Demo Portfolio</title>
+<style>
+  :root {
+    --bg: #0b0c0e;
+    --surface: #141619;
+    --line: #26292e;
+    --text: #ece9e3;
+    --muted: #93968f;
+    --accent: #d7ff3f;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Pretendard", "Segoe UI", system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+  }
+  a { color: inherit; }
+
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 28px; }
+
+  header.hero {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    color: var(--accent);
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-size: clamp(2.4rem, 2rem + 3vw, 5rem);
+    line-height: 1.04;
+    margin: 0 0 20px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+  .lede {
+    max-width: 560px;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 32px;
+    margin-top: 48px;
+    flex-wrap: wrap;
+  }
+  .hero-meta div { font-size: 0.85rem; color: var(--muted); }
+  .hero-meta strong { display: block; color: var(--text); font-size: 1rem; margin-bottom: 4px; }
+
+  section { padding: 90px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 40px;
+    gap: 16px;
+  }
+  .section-head h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .section-head span {
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .card {
+    background: var(--surface);
+    padding: 28px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .card:hover {
+    background: #1b1e22;
+    transform: translateY(-2px);
+  }
+  .card .tag {
+    color: var(--accent);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .card h3 { margin: 0 0 8px; font-size: 1.15rem; }
+  .card p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+
+  .stack-list { display: flex; flex-wrap: wrap; gap: 10px; }
+  .stack-list span {
+    border: 1px solid var(--line);
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  footer {
+    padding: 48px 0 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  footer .links { display: flex; gap: 20px; }
+  footer a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2px;
+    font-size: 0.9rem;
+  }
+  footer a:hover { border-color: var(--accent); color: var(--accent); }
+  footer small { color: var(--muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="eyebrow">Demo · Portfolio One-Pager</div>
+      <h1>MCP로 만들고<br /><em>Pages</em>로 배포한<br />1페이지 데모</h1>
+      <p class="lede">
+        이 사이트는 GitHub MCP를 통해 리포지토리 생성 → 코드 push → GitHub Pages
+        배포까지 전 과정을 자동화한 교육용 예제입니다.
+      </p>
+      <div class="hero-meta">
+        <div><strong>Repo</strong>demo-portfolio-site</div>
+        <div><strong>Build</strong>GitHub MCP → Pages</div>
+        <div><strong>Stack</strong>Static HTML / CSS</div>
+      </div>
+    </header>
+
+    <section id="work">
+      <div class="section-head">
+        <h2>진행 단계</h2>
+        <span>01 — 06</span>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <span class="tag">01</span>
+          <h3>리포지토리 생성</h3>
+          <p>mcp__github__create_repository로 공개 데모 레포 생성</p>
+        </div>
+        <div class="card">
+          <span class="tag">02</span>
+          <h3>정적 사이트 작성</h3>
+          <p>자기소개 느낌의 1페이지 HTML/CSS</p>
+        </div>
+        <div class="card">
+          <span class="tag">03</span>
+          <h3>Push</h3>
+          <p>GitHub MCP로 파일을 main 브랜치에 커밋</p>
+        </div>
+        <div class="card">
+          <span class="tag">04</span>
+          <h3>Pages 활성화</h3>
+          <p>GitHub Pages 설정 후 배포 URL 발급</p>
+        </div>
+        <div class="card">
+          <span class="tag">05</span>
+          <h3>스크린샷 캡처</h3>
+          <p>Playwright로 실제 배포 페이지 캡처</p>
+        </div>
+        <div class="card">
+          <span class="tag">06</span>
+          <h3>교육용 PPT</h3>
+          <p>전 과정을 스크린샷과 함께 PPTX로 정리</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="section-head">
+        <h2>사용 기술</h2>
+        <span>Tooling</span>
+      </div>
+      <div class="stack-list">
+        <span>GitHub MCP</span>
+        <span>GitHub Pages</span>
+        <span>HTML / CSS</span>
+        <span>Playwright MCP</span>
+        <span>Claude Code</span>
+      </div>
+    </section>
+
+    <footer>
+      <small>&copy; 2026 Demo Portfolio — Generated for educational purposes</small>
+      <div class="links">
+        <a href="https://github.com/kikikaka572/demo-portfolio-site">GitHub Repo</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
